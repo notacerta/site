@@ -7,7 +7,7 @@ import os
 import dj_database_url
 
 SECRET_KEY = '3%8f7fzm8rlh!ni&$(qo0z38jp&6(xiog$$kn18c#xrsp1mbri'
-DEBUG = False
+DEBUG = True
 ALLOWED_HOSTS = ['localhost', '.herokuapp.com']
 
 INSTALLED_APPS = [
