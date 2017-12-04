@@ -12,9 +12,16 @@ def index(request):
 			post = form.save(commit=False)
 			post.ip = str(get_client_ip(request))
 			post.created_date = timezone.now()
+			messages.success(request, 'Obrigado!')
 			post.save()
-	form = PostForm()
+			form = PostForm()
+		else:
+			messages.warning(request, 'Por favor, preencha novamente') 
+			form = PostForm(request.POST)
+	else:
+		form = PostForm()
 	return render(request, 'notacertablog/index.html', {'form': form})
+
 
 def get_client_ip(request):
     x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
