@@ -1,0 +1,63 @@
+.menu{
+	margin: 0px;
+	padding: 0px;
+}
+
+.title{
+	color: #39b540;
+}
+	
+.red {
+	height: 200px;
+	background: red;
+	background: -webkit-linear-gradient(left, red , yellow);
+	background: -o-linear-gradient(right, red, yellow);
+	background: -moz-linear-gradient(right, red, yellow);
+	background: linear-gradient(to right, #e57137 , #dd5e1f); 		
+}
+
+.white{
+}
+
+.negrito{
+ font-weight: bold;
+ }
+
+.button {
+	background-color: #4CAF50;
+	border: none;
+	color: white;
+	padding: 5px 15px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+	border-radius: 8px
+}
+
+.inputText{
+	width: 80%;
+	border-radius: 8px;
+	margin: 10px;
+}
+
+.imagem{
+	margin-top: 2%;
+	margin-left: 10%;
+	margin-bottom: 1%;
+}
+
+.greenLine{
+	background: #39b540;
+	height: 15px;
+}
+
+.marginTop{
+	margin-top: 2%;
+}
+
+.justify{
+	text-align: justify;
+}
