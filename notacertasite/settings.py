@@ -6,9 +6,9 @@ Django settings for notacertasite project.
 import os
 import dj_database_url
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '3%8f7fzm8rlh!ni&$(qo0z38jp&6(xiog$$kn18c#xrsp1mbri'
-DEBUG = True
+DEBUG = False
 ALLOWED_HOSTS = ['localhost', '.herokuapp.com']
 
 INSTALLED_APPS = [
@@ -83,7 +83,7 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
-STATIC_URL = 'notacertablog/static/'
+STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 db_from_env = dj_database_url.config(conn_max_age=500)
