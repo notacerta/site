@@ -83,8 +83,9 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
+APP_ROOT = os.path.join(BASE_DIR, 'notacertablog')
+STATIC_ROOT = os.path.join(APP_ROOT, 'static')
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'notacertablog', 'static')
 
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
