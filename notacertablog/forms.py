@@ -9,7 +9,7 @@ class PostForm(forms.ModelForm):
 		fields = ('check_empresa', 'empresa', 'check_ramo', 'ramo', 'name', 'email', 'cidade', 'estado')
 		labels = {
 			'check_empresa': ('Você tem uma empresa?'),
-			'empresa': ('Nome:'),
+			'empresa': ('Nome da empresa:'),
 			'check_ramo': ('Mas tem pretensão de abrir uma?'),
 			'ramo': ('E qual seria o ramo da sua futura empresa?'),
             'name': ('Nome Completo:'),
