@@ -17,17 +17,99 @@
 		  <p>Somos um grupo de estudantes recém formados que estão criando uma nova plataforma para facilitar na gestão fiscal de empresas de uma mameira mais sustentável, sem a necessidade de papel, trazendo uma redução considerável nos custos operacionais.</p>
 		  <p>Por essa razão, estamos realizando um levantamento de empresas que estariam interessadas nessa nova solução.</p> 
 		  <h2 class="title">Ficou interessado?</h2>
-		  <p> Não te enviaremos SPAM, fique tranquilo.
 		  <form method="POST">
 		  	{% csrf_token %}
-		    {{ form.as_p }}
-		    <input type="submit" class="button" value="Enviar">
+		  	<p align="center"> Informações técnicas</p>
+		  	{{ form.check_empresa.label }}
+		  	<div class="row marginTop">
+	    		{{ form.check_empresa }}
+	    	</div>
+		    <div id="empresa" class="row">
+		    	<div class="col-sm-12">
+					{{ form.empresa.label }}
+				</div>
+				<div class="col-sm-12">
+					{{ form.empresa }}
+				</div>
+			</div>
+
+		    <div id="ramo">
+		    	{{ form.check_ramo.label }}
+		    	<div class="row marginTop">
+		    		{{ form.check_ramo }}
+		    	</div>
+		    	<div id="tipo" class="row">
+		    		<div class="col-sm-12">
+						{{ form.ramo.label }}
+					</div>
+					<div class="col-sm-12">
+						{{ form.ramo }}
+					</div>
+				</div>
+			</div>
+
+			<div id="lead">
+				<p align="center" class="marginTop"> Informações pessoais</p>
+				<div class="row">
+					<div class="col-sm-5">
+						{{ form.name.label }}
+					</div>
+					<div class="col-sm-7">
+						{{ form.name }}
+					</div>
+				</div>
+				<div class="row marginTop">
+					<div class="col-sm-5">
+						{{ form.email.label }}
+					</div>
+					<div class="col-sm-7">
+						{{ form.email }}
+					</div>
+				</div>
+				<div class="row marginTop">
+					<div class="col-sm-5">
+						{{ form.cidade.label }}
+					</div>
+					<div class="col-sm-7">
+						{{ form.cidade }}
+					</div>
+				</div>
+				<div class="row marginTop">
+					<div class="col-sm-5">
+						{{ form.estado.label }}
+					</div>
+					<div class="col-sm-7">
+						{{ form.estado }}
+					</div>
+				</div>
+				<p class="spam marginTop"> Não te enviaremos SPAM, fique tranquilo. </p>
+		    	<input type="submit" class="button" value="Enviar">
+		    </div>
 		  </form>
+		  <div id="sorry">
+	      	<p class="marginTop"> Nos desculpe, mas nossa solução não é para você :D </p>
+		  </div>
+
+		  {% if form.errors %}
+		    {% for field in form %}
+		        {% for error in field.errors %}
+		            <div class="alert alert-danger">
+		                <strong>{{ error|escape }}</strong>
+		            </div>
+		        {% endfor %}
+		    {% endfor %}
+		    {% for error in form.non_field_errors %}
+		        <div class="alert alert-danger">
+		            <strong>{{ error|escape }}</strong>
+		        </div>
+		    {% endfor %}
+		{% endif %}
+
 		  {% if messages %}
 		  	<div class="messages">
 		      {% for message in messages %}
 		        <p class="{{ message.tags }}">{{ message }}</p>
-		      {% endfor %}w
+		      {% endfor %}
 		    </div>
 		  {% endif %}
 		</div>

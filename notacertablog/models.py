@@ -36,13 +36,13 @@ CHECK_CHOICES = (
 )
 
 class post(models.Model):
-	check_empresa = models.CharField(max_length=3, choices=CHECK_CHOICES)
-	empresa = models.CharField(max_length=50)
-	check_ramo = models.CharField(max_length=50, choices=CHECK_CHOICES)
-	ramo = models.CharField(max_length=50)
+	check_empresa = models.CharField(max_length=3, null=True, choices=CHECK_CHOICES, default=CHECK_CHOICES[0][0])
+	empresa = models.CharField(max_length=50, blank=True, null=True)
+	check_ramo = models.CharField(max_length=3, null=True, choices=CHECK_CHOICES, default=CHECK_CHOICES[0][0])
+	ramo = models.CharField(max_length=50, blank=True, null=True)
 	name = models.CharField(max_length=200)
 	email = models.EmailField(max_length=200)
-	cidade = models.CharField(max_length=50, blank=True)
+	cidade = models.CharField(max_length=50, default='')
 	estado = models.CharField(max_length=50, choices=STATE_CHOICES)
 	ip = models.CharField(max_length=15)
 	created_date = models.DateTimeField(default=timezone.now)

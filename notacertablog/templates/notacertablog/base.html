@@ -16,6 +16,30 @@
 		  gtag('js', new Date());
 		  gtag('config', 'UA-110558448-1');
 		</script>
+		<script>
+			function yesnoCheck(id) {
+			    if (document.getElementById(id).checked) {
+			    	if (id == 'id_check_empresa_0') {
+			    		document.getElementById('empresa').style.display = 'block';
+			    		document.getElementById('lead').style.display = 'block';
+			    		document.getElementById('sorry').style.display = 'none';
+			    		document.getElementById('ramo').style.display = 'none';
+			    	} else {
+			    		document.getElementById('lead').style.display = 'block';
+			    		document.getElementById('tipo').style.display = 'block';
+			    		document.getElementById('sorry').style.display = 'none';
+			    	}
+			    }
+			    else if (id == 'id_check_empresa_0') {
+			    		document.getElementById('empresa').style.display = 'none';
+			    		document.getElementById('ramo').style.display = 'block';		    					    		
+			    	} else {
+			    		document.getElementById('tipo').style.display = 'none';
+			    		document.getElementById('lead').style.display = 'none';
+			    		document.getElementById('sorry').style.display = 'block';
+			    	}
+				}
+		</script>
 	</head>
 
 	<body>
