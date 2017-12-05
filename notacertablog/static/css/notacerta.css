@@ -11,11 +11,8 @@
 	background: linear-gradient(to right, #e57137 , #dd5e1f); 		
 }
 
-.white{
-}
-
 .negrito{
- font-weight: bold;
+ 	font-weight: bold;
  }
 
 .button {
@@ -38,21 +35,30 @@
 	margin: 10px;
 }
 
-.imagem{
-	margin-top: 2%;
-	margin-left: 10%;
-	margin-bottom: 1%;
+.marginTop{
+	margin-top: 1rem;
+}
+
+.justify{
+	text-align: justify;
 }
 
 .greenLine{
 	background: #39b540;
 	height: 15px;
+	margin-bottom: 1rem;
 }
 
-.marginTop{
-	margin-top: 2%;
+.navbar-brand {
+	margin-left: 4rem;
 }
 
-.justify{
-	text-align: justify;
+.imagem{
+	width: 100%;
+	max-height: 120%;
+	margin-bottom: 1rem;
+}
+
+input, select{ 
+	width: 100%
 }

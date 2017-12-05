@@ -7,28 +7,46 @@
 		<link rel="icon" href="{% static 'img/favicon.png' %}">
 		<title>Blog Nota Certa</title>
 		<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-		<link rel="stylesheet" href="{% static 'css/notacerta.css' %}">
-		<script src="{% static 'js/jquery.min.js' %}"></script>
-		<script src="{% static 'js/bootstrap.min.js' %}"></script>
+		<link rel="stylesheet" href="{% static 'css/notacerta.css' %}">	
 		<!-- Global site tag (gtag.js) - Google Analytics -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-110558448-1"></script>
 		<script>
 		  window.dataLayer = window.dataLayer || [];
 		  function gtag(){dataLayer.push(arguments);}
 		  gtag('js', new Date());
-
 		  gtag('config', 'UA-110558448-1');
 		</script>
 	</head>
 
 	<body>
-		<div class="menu">
-			<img src="{% static 'img/logo.png' %}" alt="Nota Certa" class="imagem">
-		</div>
+		<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #FFFFFF;">
+		  <a class="navbar-brand" href="#">
+            <img src="{% static 'img/logo.png' %}" class="d-inline-block align-top" alt="">
+          </a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+
+		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		    <ul class="navbar-nav mr-auto">
+		      <li class="nav-item active">	
+		        <a class="nav-link" href="#">Nossa ideia</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="{% url 'profile' %}">Equipe</a>
+		      </li>		
+		    </ul>
+		  </div>		
+		</nav>
 		<div class="greenLine"> </div>
+
 		<div class="container">
 			{% block content %}
             {% endblock %}
         </div>
 	</body>
+
+	<script src="{% static 'js/jquery.min.js' %}"></script>
+	<script src="{% static 'js/popper.min.js' %}"></script>
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
 </html>
