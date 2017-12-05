@@ -11,3 +11,6 @@ class PostForm(forms.ModelForm):
             'name': ('Nome Completo'),
             'email': ('E-mail'),
         }
+        widgets = {
+
+        }

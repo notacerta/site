@@ -31,5 +31,8 @@ def get_client_ip(request):
         ip = request.META.get('REMOTE_ADDR')
     return ip
 
-def profile(request):
-	return render(request, 'notacertablog/profile.html')
+def sobre(request):
+	return render(request, 'notacertablog/sobre.html')
+
+def produto(request):
+	return render(request, 'notacertablog/produto.html')

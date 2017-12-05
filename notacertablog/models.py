@@ -36,7 +36,7 @@ CHECK_CHOICES = (
 )
 
 class post(models.Model):
-	check_empresa = models.CharField(max_length=50, choices=CHECK_CHOICES)
+	check_empresa = models.CharField(max_length=3, choices=CHECK_CHOICES)
 	empresa = models.CharField(max_length=50)
 	check_ramo = models.CharField(max_length=50, choices=CHECK_CHOICES)
 	ramo = models.CharField(max_length=50)
