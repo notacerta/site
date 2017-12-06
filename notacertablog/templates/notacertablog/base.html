@@ -32,17 +32,26 @@
 			    }
 			    else if (id == 'id_check_empresa_0') {
 			    		document.getElementById('empresa').style.display = 'none';
-			    		document.getElementById('ramo').style.display = 'block';		    					    		
-			    	} else {
-			    		document.getElementById('tipo').style.display = 'none';
-			    		document.getElementById('lead').style.display = 'none';
-			    		document.getElementById('sorry').style.display = 'block';
-			    	}
-				}
+			    		document.getElementById('ramo').style.display = 'block';		    					    	
+		    	} else {
+		    		document.getElementById('tipo').style.display = 'none';
+		    		document.getElementById('lead').style.display = 'none';
+		    		document.getElementById('sorry').style.display = 'block';
+		    	}
+			}
+		</script>
+		<script>
+			function verify() {
+				if (!document.getElementById('id_check_empresa_0').checked) 
+					if (document.getElementById('id_check_ramo_0').checked) {
+						document.getElementById('empresa').style.display = 'none';
+						document.getElementById('ramo').style.display = 'block';
+					}
+			}
 		</script>
 	</head>
 
-	<body>
+	<body onload="verify();">
 		<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #FFFFFF;">
 		  <a class="navbar-brand" href="{% url 'index' %}">
             <img src="{% static 'img/logo.png' %}" class="d-inline-block align-top" alt="">

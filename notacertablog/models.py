@@ -49,8 +49,8 @@ class post(models.Model):
 	created_date = models.DateTimeField(default=timezone.now)
 
 	def clean(self):
-		if self.check_ramo == 's' and self.ramo is None:
-			 raise ValidationError('Por favor, insira o ramo da sua futura empresa.')
+		if self.check_empresa == 'n' and self.check_ramo == 's' and self.ramo is None:
+			 raise ValidationError('')
 
 	def publish(self):
 		self.created_date = timezone.now()
