@@ -6,6 +6,10 @@
  	font-weight: bold;
  }
 
+.foco {
+	color: #9e5e3f;
+}
+
 .button {
 	background-color: #4CAF50;
 	border: none;
@@ -15,7 +19,7 @@
 	text-decoration: none;
 	display: inline-block;
 	font-size: 16px;
-	margin: 4px 2px;
+	margin: 3rem 2px;
 	cursor: pointer;
 	border-radius: 8px
 }
@@ -23,6 +27,7 @@
 .marginTop{
 	margin-top: 1rem;
 }
+
 
 .justify{
 	text-align: justify;

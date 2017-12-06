@@ -6,14 +6,16 @@
 		<div class="col-sm-8 justify marginTop ">
 		  <img src="{% static 'img/infografico.png' %}" alt="Infografico" class="imagem">
 		  <h2 class="title">Fundamentação:</h2>
-		   <p style="font-weight: bold; color: #9e5e3f" class="marginTop">Estimativas de especialistas de mercado em documentos fiscais mostram que as despesas operacionais de empreas de varejo podem ter uma diminuição de até 20% do que é gasto atualmente quando essas empresas optam por uma operação de negócio com um modelo de documentação fiscal eletrônica.</p>
+		   <p class="negrito foco marginTop">Estimativas de especialistas de mercado em documentos fiscais mostram que as despesas operacionais de empreas de varejo podem ter uma diminuição de até 20% do que é gasto atualmente quando essas empresas optam por uma operação de negócio com um modelo de documentação fiscal eletrônica.</p>
 		   <p>Em 2016, uma das maiores empresas de grande porte varejista do Brasil teve 28% de sua receita gasto com despesas operacionais. Considerando uma economia de 20% na redução dessas despesas, esse valor poderam cair de 28% para 22%, representando uma economia de 6% do valor da receita da empresa. </p>
 		</div>
 		<div class="col-sm-4 justify marginTop">
-		  <h2 class="title">Ficou interessado?</h2>
+		  <h2 align="center" class="title">Ficou interessado?</h2>
+		  <p class="negrito foco marginTop"> Quer ficar por dentro das novidades? Então preenche nosso formulário, é rapidinho e livre de spam!
+
 		  <form method="POST">
 		  	{% csrf_token %}
-		  	<p align="center"> Informações técnicas</p>
+
 		  	{{ form.check_empresa.label }}
 		  	<div class="row marginTop">
 	    		{{ form.check_empresa }}
@@ -43,8 +45,8 @@
 			</div>
 
 			<div id="lead">
-				<p align="center" class="marginTop"> Informações pessoais</p>
-				<div class="row">
+
+				<div class="row marginTop">
 					<div class="col-sm-5">
 						{{ form.name.label }}
 					</div>
@@ -76,7 +78,6 @@
 						{{ form.estado }}
 					</div>
 				</div>
-				<p class="spam marginTop"> Não te enviaremos SPAM, fique tranquilo. </p>
 		    	<input type="submit" class="button" value="Enviar">
 		    </div>
 		  </form>
