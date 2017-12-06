@@ -4,18 +4,12 @@
 {% block content %}
 	<div class="row justify">
 		<div class="col-sm-8 justify marginTop ">
-		  <h2 class="title">Por quê?</h2>
-		  <p>Atualmente é possível observar que empresas de varejo tem tido dificuldade na redução significativa de suas despesas operacionais. Essas despesas são denominadas como gastos mensais variáveis
-		   (folha de pagamento, operação do negócio, aluguel do imóvel, energia, água, entre outros). Como exemplo de empresas enfrentando esses problemas, podemos observar a Arezzo,
-		   Lojas Renner e a Riachuello, que conseguiram reduzir os seus custos operacionais de 2013 para 2014 em apenas 0,4%, 1% e 1,4%, respectivamente.</p>
-		   <p style="font-weight: bold; color: #9e5e3f" >Estimativas de especialistas de mercado em documentos fiscais mostram que as despesas operacionais de empreas de varejo podem ter uma diminuição de até 20% do que é gasto atualmente quando essas empresas optam por uma operação de negócio com um modelo de documentação fiscal eletrônica.</p>
+		  <img src="{% static 'img/infografico.png' %}" alt="Infografico" class="imagem">
+		  <h2 class="title">Fundamentação:</h2>
+		   <p style="font-weight: bold; color: #9e5e3f" class="marginTop">Estimativas de especialistas de mercado em documentos fiscais mostram que as despesas operacionais de empreas de varejo podem ter uma diminuição de até 20% do que é gasto atualmente quando essas empresas optam por uma operação de negócio com um modelo de documentação fiscal eletrônica.</p>
 		   <p>Em 2016, uma das maiores empresas de grande porte varejista do Brasil teve 28% de sua receita gasto com despesas operacionais. Considerando uma economia de 20% na redução dessas despesas, esse valor poderam cair de 28% para 22%, representando uma economia de 6% do valor da receita da empresa. </p>
-		   <img src="{% static 'img/infografico.png' %}" alt="Infografico" class="imagem">
 		</div>
 		<div class="col-sm-4 justify marginTop">
-		  <h2 class="title">Quem somos?</h2>
-		  <p>Somos um grupo de estudantes recém formados que estão criando uma nova plataforma para facilitar na gestão fiscal de empresas de uma maneira mais sustentável, sem a necessidade de papel, trazendo uma redução considerável nos custos operacionais.</p>
-		  <p>Por essa razão, estamos realizando um levantamento de empresas que estariam interessadas nessa nova solução.</p> 
 		  <h2 class="title">Ficou interessado?</h2>
 		  <form method="POST">
 		  	{% csrf_token %}
@@ -97,6 +91,7 @@
 		      {% endfor %}
 		    </div>
 		  {% endif %}
+
 		</div>
 	</div>
 {% endblock %}
