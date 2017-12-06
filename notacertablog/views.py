@@ -16,7 +16,7 @@ def index(request):
 			post.save()
 			form = PostForm()
 		else:
-			messages.warning(request, 'Por favor, preencha novamente') 
+			messages.warning(request, 'Ocorreu um erro no preenchimento do formulário. Por favor, revise as informações inseridas.') 
 			form = PostForm(request.POST)
 	else:
 		form = PostForm()

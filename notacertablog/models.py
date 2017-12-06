@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from django.core.exceptions import ValidationError
 
 STATE_CHOICES = (
 	('AC', 'Acre'),
@@ -46,6 +47,10 @@ class post(models.Model):
 	estado = models.CharField(max_length=50, choices=STATE_CHOICES)
 	ip = models.CharField(max_length=15)
 	created_date = models.DateTimeField(default=timezone.now)
+
+	def clean(self):
+		if self.check_ramo == 's' and self.ramo is None:
+			 raise ValidationError('Por favor, insira o ramo da sua futura empresa.')
 
 	def publish(self):
 		self.created_date = timezone.now()
