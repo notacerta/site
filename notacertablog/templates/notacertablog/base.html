@@ -6,6 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="icon" href="{% static 'img/favicon.png' %}">
 		<title>Blog Nota Certa</title>
+		<link href="https://use.fontawesome.com/releases/v5.0.0/css/all.css" rel="stylesheet">
 		<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
 		<link rel="stylesheet" href="{% static 'css/notacerta.css' %}">	
 		<!-- Global site tag (gtag.js) - Google Analytics -->
@@ -41,18 +42,19 @@
 			}
 		</script>
 		<script>
-			function verify() {
+			function verify() {		
 				if (!document.getElementById('id_check_empresa_0').checked) 
 					if (document.getElementById('id_check_ramo_0').checked) {
 						document.getElementById('empresa').style.display = 'none';
 						document.getElementById('ramo').style.display = 'block';
 					}
+				}
 			}
 		</script>
 	</head>
 
 	<body onload="verify();">
-		<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #FFFFFF;">
+		<nav class="navbar navbar-expand-lg navbar-light white-background">
 		  <a class="navbar-brand" href="{% url 'index' %}">
             <img src="{% static 'img/logo.png' %}" class="d-inline-block align-top" alt="">
           </a>
@@ -77,9 +79,29 @@
 			{% block content %}
             {% endblock %}
         </div>
-	</body>
+		
+		<div class="footer">
+        	<div class="container" align="center">
+        		<div class="row"> 
+	        		<div class="col-sm-9">
+	        			<span class="footer-text">Blog Nota Certa, 2017 </span>
+	        		</div>
+	        		<div class="col-sm-3">
+	        			<a href="https://www.facebook.com/Nota-Certa-248783612319952/?ti=as" class="fab fa-facebook" target="_blank"></a>
+		      			<a href="https://www.instagram.com/blognotacerta/" class="fab fa-instagram" target="_blank"></a>
+						<a href="https://www.twitter.com/blognotacerta" class="fab fa-twitter" target="_blank"></a>
+	        		</div>
+	        	</div>
+        	</div>
+      	</div>
 
-	<script src="{% static 'js/jquery.min.js' %}"></script>
-	<script src="{% static 'js/popper.min.js' %}"></script>
-	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+		<script src="{% static 'js/jquery.min.js' %}"></script>
+		<script src="{% static 'js/popper.min.js' %}"></script>
+		<script src="{% static 'js/bootstrap.min.js' %}"></script>
+		<script>
+			$(window).on('load',function(){
+				$('#popup').modal({backdrop: "static"});
+			});
+		</script>
+	</body>
 </html>

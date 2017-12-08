@@ -2,97 +2,58 @@
 {% load staticfiles %}
 
 {% block content %}
+	<div class="modal fade" id="popup" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+		<div class="modal-dialog modal-lg" role="document">
+	  		<div class="modal-content">
+    			<div class="modal-header">
+	      			<img src="{% static 'img/logo.png' %}">
+	      			<button type="button" class="close" data-dismiss="modal">&times;</button>
+        		</div>	
+	      		<div class="modal-body">
+	      			<div class="container-fluid">
+	      				<div class="row">
+	      					<p class="title negrito big-title" align="center">Quer reduzir seu custo operacional em até 20%?</p>
+	      				</div>
+	      				<div class="row">
+		      				<div class="col-sm-6">
+		      					<h2 class="negrito" align="center">Sistema de Gestão Fiscal Nota Certa</h2>
+		      					<div>
+								  <ul class="dropdown marginTop" align="center">
+								    <li>Instalação simplificada e rápida.</li>
+								    <li>Preço acessível ao tamanho da sua empresa.</li>
+								    <li>Conformidade para com as leis brasileiras.</li>
+								    <li class="nospace foco negrito marginTop">Se cadastre AGORA e receba 1 mês de uso GRATUITO após o lançamento.</li>
+								  </ul>
+								</div> 
+		      				</div>
+		      				<div class="col-sm-6">
+		      					<h2 class="negrito" align="center">Cadastre-se!</h2>
+		      					<div class="marginTop">
+		      						{% include "notacertablog/form.html" %} 
+		      					</div>
+		      				</div>
+	      				</div>
+	      			</div>	      		
+	      		</div>
+	      		<div class="modal-footer">
+	      			<a href="https://www.facebook.com/Nota-Certa-248783612319952/?ti=as" class="fab fa-facebook" target="_blank"></a>
+	      			<a href="https://www.instagram.com/blognotacerta/" class="fab fa-instagram" target="_blank"></a>
+					<a href="https://www.twitter.com/blognotacerta" class="fab fa-twitter" target="_blank"></a>
+	      		</div>
+	    	</div>
+	  	</div>
+	</div>
 	<div class="row justify">
 		<div class="col-sm-8 justify marginTop ">
 		  <img src="{% static 'img/infografico.png' %}" alt="Infografico" class="imagem">
-		   <p align="center" class="negrito foco marginTop">SE INSCREVA E DIMINUA EM ATÉ 20% O VALOR GASTO EM OPERAÇÃO UTILIZANDO UM MODELO DE NOTA FISCAL ELETRÔNICA!</p>
-		   <p class="negrito foco marginTop">Estimativas de especialistas de mercado em documentos fiscais mostram que as despesas operacionais de empresas de varejo podem ter uma diminuição de até 20% do que é gasto atualmente quando essas empresas optam por uma operação de negócio com um modelo de documentação fiscal eletrônica.</p>
-		   <p>Em 2016, uma das maiores empresas de grande porte varejista do Brasil teve 28% de sua receita gasto com despesas operacionais. Considerando uma economia de 20% na redução dessas despesas, esse valor poderá cair de 28% para 22%, representando uma economia de 6% do valor da receita da empresa. </p>
+		   <p align="center" class="negrito foco marginTop">
+		   <p class="negrito foco marginTop">Estimativas de especialistas de mercado em documentos fiscais mostram que as despesas operacionais de empresas de varejo podem diminuir em até 20% do que é gasto atualmente quando as mesmas optam por seguir um modelo de documentação fiscal eletrônica.</p>
+		   <p>Em 2016, uma das maiores empresas varejistas de grande porte no Brasil gastou 28% de sua receita com despesas operacionais. Considerando que essa empresa conseguisse gerar uma economia de 20% com a utilização da documentação fiscal eletrônica, o valor gasto poderia cair de 28% para 22%. Ou seja, adotando o sistema supracitado, a empresa conseguiria uma economia de até 6% do valor total da sua receita.</p>
 		</div>
 		<div class="col-sm-4 justify marginTop">
 		  <h2 align="center" class="title">Ficou interessado?</h2>
-		  <p class="negrito foco marginTop"> Quer ficar por dentro das novidades? Então preenche nosso formulário, é rapidinho e livre de spam!
-
-		  <form method="POST">
-		  	{% csrf_token %}
-
-		  	{{ form.check_empresa.label }}
-		  	<div class="row marginTop">
-	    		{{ form.check_empresa }}
-	    	</div>
-		    <div id="empresa" class="row">
-		    	<div class="col-sm-12">
-					{{ form.empresa.label }}
-				</div>
-				<div class="col-sm-12">
-					{{ form.empresa }}
-				</div>
-			</div>
-
-		    <div id="ramo">
-		    	{{ form.check_ramo.label }}
-		    	<div class="row marginTop">
-		    		{{ form.check_ramo }}
-		    	</div>
-		    	<div id="tipo" class="row">
-		    		<div class="col-sm-12">
-						{{ form.ramo.label }}
-					</div>
-					<div class="col-sm-12">
-						{{ form.ramo }}
-					</div>
-				</div>
-			</div>
-
-			<div id="lead">
-
-				<div class="row marginTop">
-					<div class="col-sm-5">
-						{{ form.name.label }}
-					</div>
-					<div class="col-sm-7">
-						{{ form.name }}
-					</div>
-				</div>
-				<div class="row marginTop">
-					<div class="col-sm-5">
-						{{ form.email.label }}
-					</div>
-					<div class="col-sm-7">
-						{{ form.email }}
-					</div>
-				</div>
-				<div class="row marginTop">
-					<div class="col-sm-5">
-						{{ form.cidade.label }}
-					</div>
-					<div class="col-sm-7">
-						{{ form.cidade }}
-					</div>
-				</div>
-				<div class="row marginTop">
-					<div class="col-sm-5">
-						{{ form.estado.label }}
-					</div>
-					<div class="col-sm-7">
-						{{ form.estado }}
-					</div>
-				</div>
-		    	<input type="submit" class="button" value="Enviar">
-		    </div>
-		  </form>
-		  <div id="sorry">
-	      	<p class="marginTop"> Nos desculpe, mas nossa solução não é para você :D </p>
-		  </div>
-
-		  {% if messages %}
-		  	<div class="messages">
-		      {% for message in messages %}
-		        <p class="{{ message.tags }}">{{ message }}</p>
-		      {% endfor %}
-		    </div>
-		  {% endif %}
-
+		  <p class="negrito foco marginTop">Se cadastre AGORA e receba 1 mês de uso GRATUITO após o lançamento.</p>
+		  {% include "notacertablog/form.html" %}  
 		</div>
 	</div>
 {% endblock %}
